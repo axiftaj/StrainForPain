@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    tools:context=".OptionsActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logoid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@mipmap/logo" />
+
+
+    <Button
+        android:id="@+id/login_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/start_id"
+        android:layout_marginBottom="4dp"
+        android:background="@mipmap/btn_bg"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textColor="#44A044"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/start_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@mipmap/btn_bg"
+        android:text="Start"
+        android:textAlignment="center"
+        android:textColor="#44A044"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
