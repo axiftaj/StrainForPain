@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClientPrivate {
 
     ApiClientPrivate context = this;
-    public static final String BASE_URL = "http://www.dahawwalur.org/staging/StrainsForPains/public/api/signUp_StepOne/";
+    public static final String BASE_URL = "http://www.dahawwalur.org/staging/StrainsForPains/public/api/";
     static Retrofit retrofit = null;
 
     @RequiresApi(api = Build.VERSION_CODES.N)

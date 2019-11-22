@@ -24,6 +24,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.strainforpain.Network.ApiClientPrivate;
+import com.example.strainforpain.Network.ApiInterface;
+import com.example.strainforpain.models.signupModels.SignUpResponse;
 import com.google.gson.JsonArray;
 
 import org.json.JSONArray;
@@ -32,6 +35,9 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class RegisterationActivity extends AppCompatActivity {
 
@@ -59,11 +65,13 @@ public class RegisterationActivity extends AppCompatActivity {
 
 
         next_btn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
 
                 if (validate()) {
-                    RegApiCall();
+//                    RegApiCall();
+                    registerUser();
                 }
 
             }
@@ -79,12 +87,47 @@ public class RegisterationActivity extends AppCompatActivity {
 
     }
 
+    private void registerUser(){
+        ApiInterface apiInterface = ApiClientPrivate.getApiClient().create(ApiInterface.class);
+        Call<SignUpResponse> call = apiInterface.registration(fullname, email, password, confirmPassword);
+        call.enqueue(new Callback<SignUpResponse>() {
+            @Override
+            public void onResponse(Call<SignUpResponse> call, retrofit2.Response<SignUpResponse> response) {
+                Log.d("zma response", response.message());
+                if (response.isSuccessful()){
+
+                    Toast.makeText(RegisterationActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterationActivity.this, "success", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterationActivity.this , Aboutpage2Activity.class));
+
+                }else{
+
+                    try {
+                        JSONArray jsonArray = new JSONArray("errors");
+                        Toast.makeText(RegisterationActivity.this, String.valueOf(jsonArray.get(0)), Toast.LENGTH_SHORT).show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    Toast.makeText(RegisterationActivity.this, "false", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SignUpResponse> call, Throwable t) {
+                Toast.makeText(RegisterationActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+
     private void RegApiCall() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.signup
                 , new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(RegisterationActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterationActivity.this, response, Toast.LENGTH_SHORT).show();
                 if (response.contains("success")) {
                     try {
 
@@ -101,7 +144,7 @@ public class RegisterationActivity extends AppCompatActivity {
                         String id = object.getString("id");
 
                         Log.d("zamaid", id);
-                        if (message.contains("Data Saved Automatically")) {
+                        if (message.contains("SignUp Successfully")) {
 
                             startActivity(new Intent(RegisterationActivity.this, Aboutpage2Activity.class));
                             Toast.makeText(RegisterationActivity.this, "succes" + response, Toast.LENGTH_SHORT).show();
@@ -115,7 +158,7 @@ public class RegisterationActivity extends AppCompatActivity {
                     }
 
                 } else {
-                    Toast.makeText(RegisterationActivity.this, "you have got some error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterationActivity.this, "you have got some error"+response, Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
@@ -135,9 +178,9 @@ public class RegisterationActivity extends AppCompatActivity {
                 HashMap<String, String> params = new HashMap<>();
 
                 params.put("fullname", fullname);
-                params.put("email", "johns@gmail.com");
-                params.put("password", "123456");
-                params.put("retype_password", "123456");
+                params.put("email", email);
+                params.put("password", password);
+                params.put("retype_password", confirmPassword);
 
                 return params;
             }
@@ -160,6 +203,7 @@ public class RegisterationActivity extends AppCompatActivity {
         fullname = et_fullName.getText().toString();
         password = et_password.getText().toString().trim();
         confirmPassword = et_password.getText().toString().trim();
+
 
         if (email.isEmpty()) {
             check = false;
