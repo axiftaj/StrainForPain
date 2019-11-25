@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Aboutpage1Activity">
+    tools:context=".SignUpOneActivity">
 
 
     <ImageView
@@ -162,6 +162,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/heigh_realtivelayout"
         android:layout_margin="20dp"
         android:layout_below="@id/weight_relativelayout"
         android:layout_width="match_parent"
@@ -224,6 +225,24 @@
 
     </RelativeLayout>
 
+   <ImageView
+       android:background="#eee"
+       android:layout_marginLeft="20dp"
+       android:id="@+id/women"
+       android:layout_below="@+id/heigh_realtivelayout"
+       android:src="@mipmap/woman"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
+
+   <ImageView
+       android:background="#eee"
+       android:layout_marginLeft="20dp"
+       android:id="@+id/boy"
+       android:layout_toRightOf="@+id/women"
+       android:layout_below="@+id/heigh_realtivelayout"
+       android:src="@mipmap/boy"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/next_to_home"
         android:layout_width="wrap_content"

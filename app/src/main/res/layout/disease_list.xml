@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/desices_list_relaticelayout"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/circle"
+            android:src="@drawable/circle"
+            android:layout_width="15sp"
+            android:layout_height="15dp"/>
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/circle"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textColor="#5E5E5E"
+            android:id="@+id/desiceName"
+            android:hint="Multiple Sclerois"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_marginRight="20dp"
+       android:layout_marginLeft="20dp"
+        android:layout_below="@+id/desices_list_relaticelayout"
+        android:background="#DCDCDC"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+
+</RelativeLayout>

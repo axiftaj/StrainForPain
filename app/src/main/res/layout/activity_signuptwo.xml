@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpTwoActivity">
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/back_arrow"
+        android:src="@mipmap/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/back_arrow"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/page2"
+        android:src="@mipmap/page2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_below="@+id/page2"
+        android:id="@+id/about_you"
+        android:textColor="#263238"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:text="About you!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_margin="20dp"
+        android:background="@mipmap/editext_border"
+        android:layout_below="@+id/about_you"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/seekBar"
+            android:layout_below="@+id/weighttext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isb_max="100"
+            app:isb_min="-1.0"
+            app:isb_progress="25"
+            app:isb_seek_smoothly="true"
+            app:isb_show_tick_marks_type="oval"
+            app:isb_tick_marks_size="13dp"
+            app:isb_show_tick_texts="true"
+            app:isb_tick_texts_size="15sp"
+            app:isb_tick_texts_color="#EFEFEF"
+            app:isb_thumb_color="#44A044"
+            app:isb_thumb_size="20dp"
+            app:isb_show_indicator="rounded_rectangle"
+            app:isb_indicator_color="#44A044"
+            app:isb_indicator_text_color="#EFEFEF"
+            app:isb_indicator_text_size="18sp"
+            app:isb_track_background_color="#EFEFEF"
+            app:isb_track_background_size="2dp"
+            app:isb_track_progress_color="#44A044"
+            app:isb_track_progress_size="4dp"
+            app:isb_only_thumb_draggable="false"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_below="@+id/seekBar"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginLeft="20dp"
+            android:hint="Rarely"
+            android:layout_below="@+id/linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/et_relative_layout"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relative_layout"
+        android:background="@mipmap/editext_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:text="I've Never Medicated With Cannabis"
+            android:layout_toRightOf="@+id/checkbox"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#DCDCDC"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+    
+
+    <TextView
+        android:id="@+id/yourlocation"
+        android:layout_below="@+id/view"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Your location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@mipmap/editext_border"
+        android:layout_below="@id/yourlocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+<TextView
+    android:padding="18dp"
+    android:text="Choose Your Location"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+
+        <Spinner
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"/>
+
+
+    </RelativeLayout>
+    <Button
+        android:id="@+id/next_to_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_id"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/btn_dark_bg"
+        android:paddingBottom="35dp"
+        android:text="Next"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+
+
+
+</RelativeLayout>

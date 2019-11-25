@@ -66,7 +66,6 @@ public class RegisterationActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (validate()) {
-//                    RegApiCall();
                     registerUser();
                 }
 
@@ -93,9 +92,10 @@ public class RegisterationActivity extends AppCompatActivity {
                 Log.d("zma response", response.message());
                 if (response.isSuccessful()){
 
+                    JSONObject jsonObject = new JSONObject();
                     Toast.makeText(RegisterationActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     Toast.makeText(RegisterationActivity.this, "success", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(RegisterationActivity.this , Aboutpage1Activity.class));
+                    startActivity(new Intent(RegisterationActivity.this , SignUpOneActivity.class));
 
                 }else{
 
@@ -110,80 +110,6 @@ public class RegisterationActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-
-    private void RegApiCall() {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.signup
-                , new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(RegisterationActivity.this, response, Toast.LENGTH_SHORT).show();
-                if (response.contains("success")) {
-                    try {
-
-                        JSONArray jsonArray = new JSONArray(response);
-
-                        JSONObject jsonObject = jsonArray.getJSONObject(0);
-
-                        JSONObject object = jsonObject.getJSONObject("data");
-
-                        String message = jsonObject.getString("msg");
-
-                        Toast.makeText(RegisterationActivity.this, message, Toast.LENGTH_SHORT).show();
-
-                        String id = object.getString("id");
-
-                        Log.d("zamaid", id);
-                        if (message.contains("SignUp Successfully")) {
-
-                            startActivity(new Intent(RegisterationActivity.this, Aboutpage1Activity.class));
-                            Toast.makeText(RegisterationActivity.this, "succes" + response, Toast.LENGTH_SHORT).show();
-
-                        } else {
-                            Toast.makeText(RegisterationActivity.this, "Incorrect" + response, Toast.LENGTH_SHORT).show();
-                        }
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                } else {
-                    Toast.makeText(RegisterationActivity.this, "you have got some error"+response, Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(RegisterationActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-
-            }
-        }) {
-            @Override
-            public String getBodyContentType() {
-                return "application/x-www-form-urlencoded;charset=UTF-8";
-            }
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                HashMap<String, String> params = new HashMap<>();
-
-                params.put("fullname", fullname);
-                params.put("email", email);
-                params.put("password", password);
-                params.put("retype_password", confirmPassword);
-
-                return params;
-            }
-
-        };
-
-        RequestQueue mRequestQueue = Volley.newRequestQueue(this);
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(20000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        mRequestQueue.add(stringRequest);
-
     }
 
 
