@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Aboutpage2Activity"></activity>
+        <activity android:name=".AboutPage2Activity"></activity>
+        <activity android:name=".Aboutpage1Activity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".RegisterationActivity" />

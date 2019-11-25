@@ -3,8 +3,7 @@ package com.example.strainforpain.models.signupModels;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SignUpResponse {
-
+public class ResponseDataStep2 {
     @SerializedName("status")
     @Expose
     private Boolean status;

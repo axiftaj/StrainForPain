@@ -51,68 +51,67 @@
         android:layout_height="20dp"/>
 
 
-    <EditText
-        android:text="asif"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/fillName"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@+id/nulltext"
-        android:layout_marginRight="20dp"
-        android:hint="Full Name"
-        android:inputType="textEmailAddress"
-        android:padding="15dp"
-        android:background="@mipmap/editext_border"
+    <RelativeLayout
+        android:padding="20dp"
+        android:layout_below="@+id/image_lbackground"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:padding="15dp"
+            android:text="asif"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/fillName"
+            android:hint="Full Name"
+            android:inputType="textEmailAddress"
+            android:background="@mipmap/editext_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
 
-    <EditText
-        android:id="@+id/email_reg_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_below="@+id/email_id_option"
-        android:layout_centerVertical="true"
-        android:background="@mipmap/editext_border"
-        android:hint="Email"
-        android:layout_marginTop="4dp"
-        android:inputType="textEmailAddress"
-        android:padding="15dp"
-        />
+        <EditText
+            android:padding="15dp"
+            android:layout_marginTop="4dp"
+            android:id="@+id/email_reg_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fillName"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/editext_border"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            />
 
-    <EditText
-        android:id="@+id/password_reg_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_below="@+id/email_reg_btn"
-        android:layout_centerVertical="true"
-        android:background="@mipmap/editext_border"
-        android:hint="Passowrd"
-        android:text="12345"
-        android:layout_marginTop="4dp"
-        android:inputType="textPassword"
-        android:padding="15dp"
-        />
-    <EditText
-        android:id="@+id/confrimr_password_reg_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_below="@+id/password_reg_btn"
-        android:layout_centerVertical="true"
-        android:background="@mipmap/editext_border"
-        android:hint="Retype-Password"
-        android:text="12345"
-        android:layout_marginTop="4dp"
-        android:inputType="textPassword"
-        android:padding="15dp"
-        />
+        <EditText
+            android:padding="15dp"
+            android:text="123456"
+            android:id="@+id/password_reg_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email_reg_btn"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/editext_border"
+            android:hint="Passowrd"
+            android:layout_marginTop="4dp"
+            android:inputType="textPassword"
+            />
+        <EditText
+            android:padding="15dp"
+            android:text="123456"
+            android:id="@+id/confrimr_password_reg_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password_reg_btn"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/editext_border"
+            android:hint="Retype-Password"
+            android:layout_marginTop="4dp"
+            android:inputType="textPassword"
+            />
 
-    
+    </RelativeLayout>
+
+
     <Button
         android:id="@+id/next_btn"
         android:paddingBottom="35dp"
@@ -136,19 +135,20 @@
 
     <TextView
         android:gravity="center"
+        android:layout_centerHorizontal="true"
         android:id="@+id/no_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-       android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"
         android:text="Already Have An Account ?" />
 
     <TextView
         android:textColor="#44A044"
-        android:layout_toRightOf="@+id/no_account"
+        android:layout_centerHorizontal="true"
         android:textStyle="bold"
+        android:layout_toRightOf="@+id/no_account"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:text="Let's Start"

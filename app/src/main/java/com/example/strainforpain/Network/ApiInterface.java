@@ -15,10 +15,19 @@ import retrofit2.http.Part;
 public interface ApiInterface {
 
     @FormUrlEncoded
-    @POST("signUp_StepOne")
+    @POST("signUpfirst")
     Call<SignUpResponse> registration(@Field("fullname") String fullName,
                                       @Field("email") String name,
                                       @Field("password") String email,
                                       @Field("retype_password") String password);
+
+    @FormUrlEncoded
+    @POST("signUpsecond")
+    Call<SignUpResponse> registration(@Field("id") String id,
+                                      @Field("year_born") String yearBorn,
+                                      @Field("weight") String weight,
+                                      @Field("weight") String height,
+                                      @Field("gender") String gender);
+
 
 }

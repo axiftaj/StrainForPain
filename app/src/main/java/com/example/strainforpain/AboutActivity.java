@@ -24,7 +24,7 @@ public class AboutActivity extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AboutActivity.this , Aboutpage2Activity.class));
+                startActivity(new Intent(AboutActivity.this , Aboutpage1Activity.class));
             }
         });
 

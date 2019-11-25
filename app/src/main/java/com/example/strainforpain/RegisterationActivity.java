@@ -3,10 +3,7 @@ package com.example.strainforpain;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +24,6 @@ import com.android.volley.toolbox.Volley;
 import com.example.strainforpain.Network.ApiClientPrivate;
 import com.example.strainforpain.Network.ApiInterface;
 import com.example.strainforpain.models.signupModels.SignUpResponse;
-import com.google.gson.JsonArray;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -87,6 +83,7 @@ public class RegisterationActivity extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void registerUser(){
         ApiInterface apiInterface = ApiClientPrivate.getApiClient().create(ApiInterface.class);
         Call<SignUpResponse> call = apiInterface.registration(fullname, email, password, confirmPassword);
@@ -98,17 +95,11 @@ public class RegisterationActivity extends AppCompatActivity {
 
                     Toast.makeText(RegisterationActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     Toast.makeText(RegisterationActivity.this, "success", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(RegisterationActivity.this , Aboutpage2Activity.class));
+                    startActivity(new Intent(RegisterationActivity.this , Aboutpage1Activity.class));
 
                 }else{
 
-                    try {
-                        JSONArray jsonArray = new JSONArray("errors");
-                        Toast.makeText(RegisterationActivity.this, String.valueOf(jsonArray.get(0)), Toast.LENGTH_SHORT).show();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
+                    //  Toast.makeText(RegisterationActivity.this, String.valueOf(jsonArray.get(0)), Toast.LENGTH_SHORT).show();
                     Toast.makeText(RegisterationActivity.this, "false", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -146,7 +137,7 @@ public class RegisterationActivity extends AppCompatActivity {
                         Log.d("zamaid", id);
                         if (message.contains("SignUp Successfully")) {
 
-                            startActivity(new Intent(RegisterationActivity.this, Aboutpage2Activity.class));
+                            startActivity(new Intent(RegisterationActivity.this, Aboutpage1Activity.class));
                             Toast.makeText(RegisterationActivity.this, "succes" + response, Toast.LENGTH_SHORT).show();
 
                         } else {
