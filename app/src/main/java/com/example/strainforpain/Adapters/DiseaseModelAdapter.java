@@ -31,6 +31,7 @@ public class DiseaseModelAdapter extends RecyclerView.Adapter<DiseaseModelAdapte
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.disease_list, parent, false);
 

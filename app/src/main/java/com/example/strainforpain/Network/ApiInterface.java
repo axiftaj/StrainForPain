@@ -1,5 +1,6 @@
 package com.example.strainforpain.Network;
 
+import com.example.strainforpain.Adapters.Model.DiseaseHomeResponse.DiseaseHomeResponse;
 import com.example.strainforpain.Adapters.Model.diseaseModels.DiseaseResponse;
 import com.example.strainforpain.models.signupModels.ResponseDataStep2;
 import com.example.strainforpain.models.signupModels.ResponseDataStep3;
@@ -38,9 +39,12 @@ public interface ApiInterface {
     @GET("diseases")
     Call<DiseaseResponse> getDiseases();
 
-//    @GET("diseases?")
-//    Call<DiseaseHomeResponse> getHomeDiseases(@Query("id") int id);
+    @GET("disease?")
+    Call<DiseaseHomeResponse> getHomeDiseases(@Query("id") int id);
 
+
+    @GET("diseasedetails?")
+    Call<DiseaseHomeResponse> getHomeDiseases(@Query("id") String title);
 
 
 }
