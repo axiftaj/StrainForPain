@@ -7,15 +7,9 @@
     tools:context=".HomeActivity">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <RelativeLayout
+                android:id="@+id/relatice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -42,8 +36,8 @@
                     android:textStyle="bold"
                     android:layout_below="@+id/view_id"
                     android:layout_toLeftOf="@+id/drop_down_btn"
-                    android:id="@+id/searhc"
-                    android:text="Seizure"
+                    android:id="@+id/diseaseName"
+                    android:hint="Seizure"
                     android:layout_marginLeft="20dp"
                     android:padding="15dp"
                     android:layout_marginTop="10sp"
@@ -64,21 +58,17 @@
                     android:layout_height="wrap_content"/>
 
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView"
-                    android:layout_below="@+id/searhc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
 
 
             </RelativeLayout>
 
-        </androidx.core.widget.NestedScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/relatice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-
-
-    </RelativeLayout>
 
 
 </RelativeLayout>

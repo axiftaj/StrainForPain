@@ -12,7 +12,7 @@ public class ResponseDataStep2 {
     private String message;
     @SerializedName("data")
     @Expose
-    private Data data;
+    private DataStep2 data;
     @SerializedName("code")
     @Expose
     private Integer code;
@@ -33,11 +33,11 @@ public class ResponseDataStep2 {
         this.message = message;
     }
 
-    public Data getData() {
+    public DataStep2 getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void DataStep2(DataStep2 data) {
         this.data = data;
     }
 

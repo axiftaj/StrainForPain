@@ -13,24 +13,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.strainforpain.Network.ApiClientPrivate;
 import com.example.strainforpain.Network.ApiInterface;
 import com.example.strainforpain.models.signupModels.SignUpResponse;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -92,14 +77,19 @@ public class RegisterationActivity extends AppCompatActivity {
                 Log.d("zma response", response.message());
                 if (response.isSuccessful()){
 
-                    JSONObject jsonObject = new JSONObject();
+
+                    Intent intent = new Intent(RegisterationActivity.this, SignUpTwoActivity.class);
+                    Toast.makeText(RegisterationActivity.this, "zama_id"+response.body().getData().getId(), Toast.LENGTH_SHORT).show();
+
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("ids", Math.toIntExact(response.body().getData().getId()));
+                    startActivity(new Intent(RegisterationActivity.this, SignUpTwoActivity.class).putExtras(bundle));
+
                     Toast.makeText(RegisterationActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     Toast.makeText(RegisterationActivity.this, "success", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(RegisterationActivity.this , SignUpOneActivity.class));
 
                 }else{
 
-                    //  Toast.makeText(RegisterationActivity.this, String.valueOf(jsonArray.get(0)), Toast.LENGTH_SHORT).show();
                     Toast.makeText(RegisterationActivity.this, "false", Toast.LENGTH_SHORT).show();
                 }
             }

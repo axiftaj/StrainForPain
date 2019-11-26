@@ -28,10 +28,10 @@ public class DataStep2 {
     private String gender;
     @SerializedName("description")
     @Expose
-    private String description;
+    private Object description;
     @SerializedName("location")
     @Expose
-    private String location;
+    private Object location;
     @SerializedName("created_at")
     @Expose
     private String createdAt;
@@ -95,19 +95,19 @@ public class DataStep2 {
         this.gender = gender;
     }
 
-    public String getDescription() {
+    public Object getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(Object description) {
         this.description = description;
     }
 
-    public String getLocation() {
+    public Object getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Object location) {
         this.location = location;
     }
 
@@ -126,4 +126,5 @@ public class DataStep2 {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 }

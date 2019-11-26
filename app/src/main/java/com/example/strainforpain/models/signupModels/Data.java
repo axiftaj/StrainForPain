@@ -1,65 +1,120 @@
+
 package com.example.strainforpain.models.signupModels;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+@SuppressWarnings("unused")
 public class Data {
 
-
-    @SerializedName("fullname")
-    @Expose
-    private String fullname;
-    @SerializedName("email")
-    @Expose
-    private String email;
-    @SerializedName("updated_at")
-    @Expose
-    private String updatedAt;
     @SerializedName("created_at")
-    @Expose
-    private String createdAt;
+    private String mCreatedAt;
+    @SerializedName("description")
+    private String mDescription;
+    @SerializedName("email")
+    private String mEmail;
+    @SerializedName("fullname")
+    private String mFullname;
+    @SerializedName("gender")
+    private String mGender;
+    @SerializedName("height")
+    private String mHeight;
     @SerializedName("id")
-    @Expose
-    private Integer id;
-
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+    private Long mId;
+    @SerializedName("location")
+    private String mLocation;
+    @SerializedName("updated_at")
+    private String mUpdatedAt;
+    @SerializedName("weight")
+    private String mWeight;
+    @SerializedName("year_born")
+    private String mYearBorn;
 
     public String getCreatedAt() {
-        return createdAt;
+        return mCreatedAt;
     }
 
     public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+        mCreatedAt = createdAt;
     }
 
-    public Integer getId() {
-        return id;
+    public String getDescription() {
+        return mDescription;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setDescription(String description) {
+        mDescription = description;
+    }
+
+    public String getEmail() {
+        return mEmail;
+    }
+
+    public void setEmail(String email) {
+        mEmail = email;
+    }
+
+    public String getFullname() {
+        return mFullname;
+    }
+
+    public void setFullname(String fullname) {
+        mFullname = fullname;
+    }
+
+    public String getGender() {
+        return mGender;
+    }
+
+    public void setGender(String gender) {
+        mGender = gender;
+    }
+
+    public String getHeight() {
+        return mHeight;
+    }
+
+    public void setHeight(String height) {
+        mHeight = height;
+    }
+
+    public Long getId() {
+        return mId;
+    }
+
+    public void setId(Long id) {
+        mId = id;
+    }
+
+    public String getLocation() {
+        return mLocation;
+    }
+
+    public void setLocation(String location) {
+        mLocation = location;
+    }
+
+    public String getUpdatedAt() {
+        return mUpdatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        mUpdatedAt = updatedAt;
+    }
+
+    public String getWeight() {
+        return mWeight;
+    }
+
+    public void setWeight(String weight) {
+        mWeight = weight;
+    }
+
+    public String getYearBorn() {
+        return mYearBorn;
+    }
+
+    public void setYearBorn(String yearBorn) {
+        mYearBorn = yearBorn;
     }
 
 }
