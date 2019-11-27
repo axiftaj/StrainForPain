@@ -20,8 +20,8 @@
         android:layout_below="@+id/back_arrow"
         android:id="@+id/about_you"
         android:textColor="#263238"
+        android:fontFamily="@font/poppins_bold"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
         android:layout_marginTop="10dp"
         android:textSize="30sp"
         android:text="About you!"
@@ -48,21 +48,21 @@
 
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:textSize="18sp"
-            android:textStyle="bold"
             android:textColor="#263238"
             android:text="Year Born"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/yearBorn"
             android:textSize="18sp"
-            android:textStyle="bold"
             android:textColor="#263238"
            android:layout_alignParentRight="true"
-          android:hint="1995"
-            android:layout_width="wrap_content"
+              android:hint="2019"
+                android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.warkiz.widget.IndicatorSeekBar
@@ -70,9 +70,6 @@
             android:layout_below="@+id/yearBorn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:isb_max="100"
-            app:isb_min="-1.0"
-            app:isb_progress="25"
             app:isb_seek_smoothly="true"
             app:isb_show_tick_marks_type="oval"
             app:isb_tick_marks_size="13dp"
@@ -103,27 +100,34 @@
 
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:textSize="18sp"
-            android:textStyle="bold"
             android:textColor="#263238"
             android:id="@+id/weighttext"
             android:text="Weight"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:textAlignment="center"
             android:id="@+id/weight"
             android:textSize="18sp"
-            android:textStyle="bold"
+            android:textStyle="normal"
+            android:layout_marginRight="3dp"
+            android:text="25"
             android:textColor="#263238"
             android:layout_toLeftOf="@+id/unit"
-            android:hint="97"
+            android:hint="25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
+
+            android:fontFamily="@font/poppins_light"
             android:layout_above="@+id/weight_seekBar"
+            android:layout_marginBottom="2dp"
             android:textAlignment="center"
              android:id="@+id/unit"
             android:layout_alignParentRight="true"
@@ -137,8 +141,7 @@
             android:layout_below="@+id/weighttext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:isb_max="100"
-            app:isb_min="-1.0"
+            app:isb_max="150"
             app:isb_progress="25"
             app:isb_seek_smoothly="true"
             app:isb_show_tick_marks_type="oval"
@@ -170,6 +173,7 @@
 
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#263238"
@@ -179,20 +183,25 @@
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:layout_marginRight="3dp"
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/height"
             android:textSize="18sp"
-            android:textStyle="bold"
             android:textColor="#263238"
             android:layout_toLeftOf="@+id/height_unit"
-            android:text="6"
+           android:hint="3"
+            android:text="3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:fontFamily="@font/poppins_light"
             android:id="@+id/height_unit"
             android:layout_alignParentRight="true"
             android:textColor="#DCDCDC"
             android:hint="Ft"
+            android:text="Ft"
+            android:layout_marginBottom="3dp"
             android:layout_above="@+id/height_seekBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -202,9 +211,9 @@
             android:layout_below="@+id/heighttext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:isb_max="100"
-            app:isb_min="-1.0"
-            app:isb_progress="25"
+            app:isb_max="10"
+            app:isb_min="0"
+            app:isb_progress="3"
             app:isb_seek_smoothly="true"
             app:isb_show_tick_marks_type="oval"
             app:isb_tick_marks_size="13dp"
@@ -226,6 +235,7 @@
     </RelativeLayout>
 
     <TextView
+        android:fontFamily="@font/poppins_semi_bold"
         android:id="@+id/gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -235,13 +245,13 @@
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/heigh_realtivelayout"/>
 
-
     <LinearLayout
+
         android:id="@+id/female"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_below="@+id/gender"
-        android:layout_marginLeft="2dp"
+        android:layout_marginLeft="20dp"
         android:background="@color/gray"
         android:orientation="horizontal">
 
@@ -281,6 +291,7 @@
 
 
     <Button
+        android:fontFamily="@font/poppins_semi_bold"
         android:id="@+id/next_to_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

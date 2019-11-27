@@ -3,6 +3,7 @@ package com.example.strainforpain;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -69,34 +70,40 @@ public class RegisterationActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void registerUser(){
+
+        final ProgressDialog progressDialog  = new ProgressDialog(RegisterationActivity.this);
+
+        progressDialog.setTitle("Loading...");
+        progressDialog.setMessage("Wait");
+        progressDialog.show();
+
+
+
         ApiInterface apiInterface = ApiClientPrivate.getApiClient().create(ApiInterface.class);
         Call<SignUpResponse> call = apiInterface.registration(fullname, email, password, confirmPassword);
         call.enqueue(new Callback<SignUpResponse>() {
             @Override
             public void onResponse(Call<SignUpResponse> call, retrofit2.Response<SignUpResponse> response) {
-                Log.d("zma response", response.message());
                 if (response.isSuccessful()){
 
-
-                    Intent intent = new Intent(RegisterationActivity.this, SignUpTwoActivity.class);
-                    Toast.makeText(RegisterationActivity.this, "zama_id"+response.body().getData().getId(), Toast.LENGTH_SHORT).show();
+                  Intent intent = new Intent(RegisterationActivity.this, SignUpTwoActivity.class);
 
                     Bundle bundle = new Bundle();
                     bundle.putInt("ids", Math.toIntExact(response.body().getData().getId()));
                     startActivity(new Intent(RegisterationActivity.this, SignUpTwoActivity.class).putExtras(bundle));
 
-                    Toast.makeText(RegisterationActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                    Toast.makeText(RegisterationActivity.this, "success", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
 
                 }else{
-
-                    Toast.makeText(RegisterationActivity.this, "false", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterationActivity.this, "Email All ready Taken", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
                 }
             }
 
             @Override
             public void onFailure(Call<SignUpResponse> call, Throwable t) {
                 Toast.makeText(RegisterationActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
 
             }
         });

@@ -61,7 +61,6 @@ public class DiseaseActivity extends AppCompatActivity {
                     diseaseModels.addAll(response.body().getData());
                     diseaseModelAdapter.notifyDataSetChanged();
 
-
                 }else{
 
                     Toast.makeText(DiseaseActivity.this, "false", Toast.LENGTH_SHORT).show();

@@ -23,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.strainforpain.Utills.GeneralUtills;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView back ;
     private Button login ;
     private EditText email_id_option , password;
+    String id ;
+
 
     private static final String PREFER_NAME = null;
 
@@ -63,8 +66,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
 
     private void ApiCall() {
@@ -92,6 +93,11 @@ public class LoginActivity extends AppCompatActivity {
                                 progressDialog.dismiss();
                                 finishAffinity();
 
+                                id =  jsonObject.getString("id");
+
+                                GeneralUtills.putStringValueInEditor(LoginActivity.this , "id" , id );
+                                GeneralUtills.putBooleanValueInEditor(LoginActivity.this , "isLogin" , true);
+
 
                             }else {
                                 progressDialog.dismiss();
@@ -117,11 +123,8 @@ public class LoginActivity extends AppCompatActivity {
                         params.put("email",email_id_option.getText().toString().trim());
                         params.put("password",password.getText().toString().trim());
 
-                        SharedPreferences sp=getSharedPreferences("Login", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor Ed=sp.edit();
-                        Ed.putString("email",email_id_option.getText().toString() );
-                        Ed.putString("password",password.getText().toString() );
-                        Ed.commit();
+
+
                         return params;
                     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,9 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
 
     <ImageView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/back_arrow"
         android:src="@mipmap/back"
@@ -17,9 +21,11 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:textColor="#000"
         android:layout_marginTop="20dp"
         android:id="@+id/name"
-        android:textSize="15sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="15dp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:hint="Name"
@@ -37,7 +43,6 @@
 
     <TextView
         android:layout_marginTop="20dp"
-
         android:layout_below="@+id/name"
         android:id="@+id/title"
         android:layout_width="130dp"
@@ -55,140 +60,185 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/image" />
 
+
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/nulltext"
-        android:layout_marginBottom="-4dp"
+        android:orientation="horizontal"
         android:background="#FFFFFF"
-        android:orientation="horizontal">
+        >
 
         <LinearLayout
-            android:layout_width="391dp"
+            android:id="@+id/linear_id"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="5dp"
+            >
+
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="CDB"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal"
                     android:textColor="#000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="THC"
                     android:textColor="#000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_regular"
+
                     android:text="THC"
                     android:textColor="#000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
 
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
                     android:text="CBC"
                     android:textColor="#000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
                     android:text="CBC"
                     android:textColor="#000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="22dp"
+                    android:layout_weight="1"
                     android:text="CBC"
                     android:textColor="#000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-
+                    android:gravity="center_horizontal"
+                    android:textSize="15sp"
+                    />
             </LinearLayout>
 
 
+
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/CDB"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center_horizontal"
                     android:text="0.876"
                     android:textAlignment="center" />
 
                 <TextView
                     android:id="@+id/THC"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_light"
+
                     android:text="8.92" />
 
                 <TextView
                     android:id="@+id/CBN"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_light"
+
                     android:text="0.876" />
 
                 <TextView
                     android:id="@+id/THCV"
-                    android:layout_width="wrap_content"
+
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
                     android:text="0.876" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/CBC"
+
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
                     android:text="0.876" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
                     android:text="0.142" />
 
 
             </LinearLayout>
 
-
         </LinearLayout>
     </LinearLayout>
+
+    <View
+        android:background="#44A044"
+        android:layout_below="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
 
     <TextView
         android:id="@+id/type"
         android:text="Type"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -201,8 +251,8 @@
         android:id="@+id/et_type"
         android:hint="Sativa dominant"
         android:textColor="#44A044"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:text="hASIF ASD"
+        android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/linear"
@@ -211,55 +261,57 @@
 
     <TextView
         android:id="@+id/origin"
-        android:text="Type"
-        android:textSize="18sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Origin"
         android:textStyle="bold"
+        android:textSize="15sp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <TextView
-        android:layout_toRightOf="@+id/origin"
-        android:id="@+id/et_origin"
-        android:hint="Sativa dominant"
-        android:textColor="#44A044"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/et_origin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/type"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/origin"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:hint="Sativa dominant"
+            android:textColor="#44A044"
+            android:textSize="15sp" />
 
-    <TextView
+        <TextView
         android:id="@+id/prtency"
-        android:text="Type"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:text="Potency"
+        android:textSize="15sp"
+        android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/origin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <TextView
-        android:layout_toRightOf="@+id/prtency"
-        android:id="@+id/et_prtency"
-        android:hint="High"
-        android:textColor="#44A044"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/origin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
+        <TextView
+            android:id="@+id/et_prtency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/origin"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/prtency"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:hint="High"
+            android:textColor="#44A044" />
 
-    <TextView
+        <TextView
+
       android:layout_margin="10dp"
+        android:textSize="15sp"
         android:hint="@string/lorum"
         android:layout_below="@+id/prtency"
         android:id="@+id/description"
@@ -267,23 +319,26 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        android:layout_marginTop="10dp"
         android:layout_alignParentLeft="true"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/view_id"
+        android:layout_below="@+id/description"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@mipmap/btn_dark_bg"
         android:paddingBottom="35dp"
         android:text="Add Favourite"
         android:textColor="#ffffff"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_regular"/>
 
     <Button
+        android:layout_marginTop="10dp"
         android:layout_alignParentRight="true"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/view_id"
+       android:layout_below="@+id/description"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@mipmap/btn_dark_bg"
@@ -292,8 +347,10 @@
         android:textColor="#ffffff"
         android:textStyle="bold" />
 
+    </RelativeLayout>
 
 
 
 
-</RelativeLayout>
+
+</ScrollView>

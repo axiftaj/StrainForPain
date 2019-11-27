@@ -98,7 +98,7 @@
         android:paddingBottom="35dp"
         android:text="Login"
         android:textColor="#ffffff"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
        android:layout_above="@+id/view_id"
         android:layout_centerHorizontal="true"
         android:background="@mipmap/btn_dark_bg"

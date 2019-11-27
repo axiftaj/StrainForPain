@@ -17,6 +17,7 @@
 
 
     <Button
+        android:fontFamily="@font/poppins_bold"
         android:id="@+id/login_option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,6 +32,7 @@
         android:textStyle="bold" />
 
     <Button
+        android:fontFamily="@font/poppins_bold"
         android:id="@+id/start_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

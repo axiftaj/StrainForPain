@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:id="@+id/desices_list_relaticelayout"
@@ -18,11 +18,11 @@
             android:layout_width="15sp"
             android:layout_height="15dp"/>
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/circle"
-            android:textStyle="bold"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textColor="#5E5E5E"
             android:id="@+id/desiceName"
             android:hint="Multiple Sclerois"

@@ -15,6 +15,7 @@
 
 
                 <TextView
+                    android:fontFamily="@font/poppins_semi_bold"
                     android:id="@+id/recommendations"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -33,11 +34,11 @@
 
 
                 <TextView
-                    android:textStyle="bold"
+                   android:fontFamily="@font/poppins_semi_bold"
                     android:layout_below="@+id/view_id"
                     android:layout_toLeftOf="@+id/drop_down_btn"
                     android:id="@+id/diseaseName"
-                    android:hint="Seizure"
+                    android:text="Seizure"
                     android:layout_marginLeft="20dp"
                     android:padding="15dp"
                     android:layout_marginTop="10sp"
@@ -55,7 +56,7 @@
                     android:layout_below="@+id/view_id"
                     android:background="@mipmap/dropdown"
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="50dp"/>
 
 
 

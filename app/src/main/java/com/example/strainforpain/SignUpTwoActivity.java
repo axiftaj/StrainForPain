@@ -3,6 +3,7 @@ package com.example.strainforpain;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -82,6 +83,7 @@ public class SignUpTwoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 gender = "male";
+
                 female.setBackgroundColor(getResources().getColor(R.color.gray));
                 male.setBackground(getResources().getDrawable(R.drawable.round));
             }
@@ -104,8 +106,6 @@ public class SignUpTwoActivity extends AppCompatActivity {
         yearSeekBar.setOnSeekChangeListener(new OnSeekChangeListener() {
             @Override
             public void onSeeking(SeekParams seekParams) {
-
-                Toast.makeText(SignUpTwoActivity.this, String.valueOf(seekParams.progress), Toast.LENGTH_SHORT).show();
 
                 year_born = String.valueOf(seekParams.progress);
                 et_year_born.setText(year_born);
@@ -180,6 +180,14 @@ public class SignUpTwoActivity extends AppCompatActivity {
     }
 
     private void registerUserStepTwo(String id, String year_born, String weight, String height, String gender) {
+
+        final ProgressDialog progressDialog  = new ProgressDialog(SignUpTwoActivity.this);
+
+        progressDialog.setTitle("Loading...");
+        progressDialog.setMessage("Wait");
+        progressDialog.show();
+
+
         ApiInterface apiInterface = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             apiInterface = ApiClientPrivate.getApiClient().create(ApiInterface.class);
@@ -192,21 +200,23 @@ public class SignUpTwoActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
 
                     Intent intent = new Intent(SignUpTwoActivity.this, SignUpThreeActivity.class);
-                    Toast.makeText(SignUpTwoActivity.this, "zama_id"+response.body().getData().getId(), Toast.LENGTH_SHORT).show();
 
                     Bundle bundle = new Bundle();
                     bundle.putInt("ids",response.body().getData().getId());
                     startActivity(new Intent(SignUpTwoActivity.this, SignUpThreeActivity.class).putExtras(bundle));
 
-                    Toast.makeText(SignUpTwoActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
 
                 } else {
-                    Toast.makeText(SignUpTwoActivity.this, "false" + response.message(), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+
                 }
             }
             @Override
             public void onFailure(Call<ResponseDataStep2> call, Throwable t) {
                 Toast.makeText(SignUpTwoActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+
 
             }
         });

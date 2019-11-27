@@ -59,7 +59,6 @@
 
         <EditText
             android:padding="15dp"
-            android:text="asif"
             android:layout_centerHorizontal="true"
             android:id="@+id/fillName"
             android:hint="Full Name"
@@ -84,7 +83,6 @@
 
         <EditText
             android:padding="15dp"
-            android:text="123456"
             android:id="@+id/password_reg_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,7 +95,6 @@
             />
         <EditText
             android:padding="15dp"
-            android:text="123456"
             android:id="@+id/confrimr_password_reg_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -117,7 +114,7 @@
         android:paddingBottom="35dp"
         android:text="Next"
         android:textColor="#ffffff"
-        android:textStyle="bold"
+      android:fontFamily="@font/poppins_bold"
         android:layout_above="@+id/view_id"
         android:layout_centerHorizontal="true"
         android:background="@mipmap/btn_dark_bg"

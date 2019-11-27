@@ -2,6 +2,7 @@ package com.example.strainforpain;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,18 +27,18 @@ import com.warkiz.widget.SeekParams;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class SignUpThreeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class SignUpThreeActivity extends AppCompatActivity {
 
     private ImageView back_arrow;
 
     private Button next_to_home;
     private IndicatorSeekBar seekBar;
     String id ;
-    String  option1 , option2 , option3 , option4;
+    String  option1 , option2 , option3 , option4 , choose_location;
 
     private TextView options;
     private Spinner spinner;
-    private static final String[] paths = {"Choose Your Location", "Iran", "USa"};
+    private static final String[] paths = {"Choose Your Location", "Toronto", "Ottawa" , "Calgary" , "Victoria" , "Quebec City"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +56,6 @@ public class SignUpThreeActivity extends AppCompatActivity implements AdapterVie
         Bundle intent = getIntent().getExtras();
 
         id = String.valueOf(intent.getInt("ids"));
-        Toast.makeText(this, "new new id:" + String.valueOf(id), Toast.LENGTH_SHORT).show();
-
 
 
         seekBar.setOnSeekChangeListener(new OnSeekChangeListener() {
@@ -105,11 +104,36 @@ public class SignUpThreeActivity extends AppCompatActivity implements AdapterVie
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
 
 
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, final long id) {
+
+                 choose_location = spinner.getSelectedItem().toString();
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+
+
+        next_to_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ApiCall(id , String.valueOf(options), choose_location );
+
+            }
+        });
         back_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,19 +142,19 @@ public class SignUpThreeActivity extends AppCompatActivity implements AdapterVie
             }
         });
 
-        next_to_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ApiCall(id , String.valueOf(options), "countruy");
 
-            }
-        });
 
     }
 
 
 
     public void ApiCall(String id, String options, String countruy){
+
+        final ProgressDialog progressDialog  = new ProgressDialog(SignUpThreeActivity.this);
+
+        progressDialog.setTitle("Loading...");
+        progressDialog.setMessage("Wait");
+        progressDialog.show();
 
         ApiInterface apiInterface = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
@@ -143,31 +167,27 @@ public class SignUpThreeActivity extends AppCompatActivity implements AdapterVie
                 Log.d("zma response", response.message());
                 if (response.isSuccessful()) {
 
-                    Toast.makeText(SignUpThreeActivity.this, "success", Toast.LENGTH_SHORT).show();
 
                     startActivity(new Intent(SignUpThreeActivity.this , DiseaseActivity.class));
                     Toast.makeText(SignUpThreeActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    progressDialog.show();
+
 
                 } else {
                     Toast.makeText(SignUpThreeActivity.this, "false" + response.message(), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
                 }
             }
             @Override
             public void onFailure(Call<ResponseDataStep3> call, Throwable t) {
-                Toast.makeText(SignUpThreeActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpThreeActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();                    progressDialog.dismiss();
+                progressDialog.dismiss();
+
 
             }
         });
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
 }
 

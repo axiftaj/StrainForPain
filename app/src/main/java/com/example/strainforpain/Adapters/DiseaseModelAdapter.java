@@ -3,6 +3,7 @@ package com.example.strainforpain.Adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.strainforpain.Adapters.Model.diseaseModels.Datum;
 import com.example.strainforpain.HomeActivity;
 import com.example.strainforpain.R;
+import com.example.strainforpain.Utills.GeneralUtills;
 
 import java.util.List;
 
@@ -67,18 +69,15 @@ public class DiseaseModelAdapter extends RecyclerView.Adapter<DiseaseModelAdapte
         public void onClick(View v) {
 
             Datum datum = diseaseModels.get(getAdapterPosition());
+            GeneralUtills.putStringValueInEditor(context , "id" , String.valueOf(datum.getId()));
 
             Intent intent = new Intent(context , HomeActivity.class);
-//
-//            intent.putExtra("ids" , datum.getId());
-//            Toast.makeText(context, "id"+ datum.getId(), Toast.LENGTH_SHORT).show();
-//            intent.putExtra("diseaseName" , datum.getDiseaseName());
-//            context.startActivity(intent);
 
             Bundle bundle = new Bundle();
-            bundle.putString("idess" , String.valueOf(datum.getId()));
-            bundle.putString("name" , datum.getDiseaseName());
+        //    bundle.putInt("idess" , InString.valueOf(datum.getId()));
 
+            bundle.putString("name" , datum.getDiseaseName());
+            Log.d("name" , datum.getDiseaseName());
             intent.putExtras(bundle);
             context.startActivity(intent);
 

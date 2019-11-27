@@ -89,7 +89,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             Intent intent = new Intent(context , DetailActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString("titile" , datum.getTitle());
-
+            bundle.putString("id" , datum.getId());
             intent.putExtras(bundle);
             context.startActivity(intent);
 

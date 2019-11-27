@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 
+import com.example.strainforpain.Utills.GeneralUtills;
+
 public class MainActivity extends AppCompatActivity {
 
     private final int SPLASH_DISPLAY_LENGTH = 2000;
@@ -22,7 +24,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                 startActivity(new Intent(MainActivity.this , OptionsActivity.class));
+
+                boolean isLogin = GeneralUtills.getSharedPreferences(MainActivity.this).getBoolean("isLogin" , false);
+
+                if (isLogin){
+                    startActivity(new Intent(MainActivity.this , HomeActivity.class));
+
+                }else {
+                    startActivity(new Intent(MainActivity.this , OptionsActivity.class));
+
+                }
+
                 MainActivity.this.finish();
             }
         }, SPLASH_DISPLAY_LENGTH);

@@ -91,11 +91,11 @@
             android:id="@+id/options"
             android:layout_marginTop="20dp"
             android:textSize="18sp"
-            android:textStyle="bold"
+           android:fontFamily="@font/poppins_bold"
             android:layout_marginBottom="10dp"
             android:textColor="#000"
             android:layout_marginLeft="20dp"
-            android:hint="Rarely"
+            android:text="Rarely"
             android:layout_below="@+id/linear_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -119,6 +119,7 @@
 
 
         <TextView
+            android:fontFamily="@font/poppins_light"
             android:layout_marginLeft="10dp"
             android:text="I've Never Medicated With Cannabis"
             android:layout_toRightOf="@+id/checkbox"
@@ -139,6 +140,7 @@
     
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/yourlocation"
         android:layout_below="@+id/view"
         android:textStyle="bold"
