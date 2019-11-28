@@ -59,7 +59,7 @@ public class DetailActivity extends AppCompatActivity {
         String title = bundle.getString("titile");
         String id = bundle.getString("id");
 
-        Toast.makeText(this, "zama id id : " + id, Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(this, "zama id id : " + id, Toast.LENGTH_SHORT).show();
 
         titleName.setText(title);
 

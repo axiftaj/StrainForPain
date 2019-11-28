@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="fitXY"
-        android:src="@drawable/homepic" />
+        android:src="@drawable/ic_launcher_background" />
 
     <TextView
         android:fontFamily="@font/poppins_semi_bold"

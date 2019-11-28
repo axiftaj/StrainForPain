@@ -39,7 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="fitXY"
-        android:src="@drawable/homepic" />
+        android:src="@drawable/ic_launcher_background"
+        />
 
     <TextView
         android:layout_marginTop="20dp"
@@ -71,7 +72,6 @@
         >
 
         <LinearLayout
-            android:id="@+id/linear_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"

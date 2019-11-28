@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -35,7 +36,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private ImageView back ;
     private Button login ;
-    private EditText email_id_option , password;
+    private EditText email_id_option , password ;
+    private TextView LetsStart ;
     String id ;
 
 
@@ -50,6 +52,14 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.logoid_btn);
         email_id_option = findViewById(R.id.email_id_option);
         password = findViewById(R.id.password);
+        LetsStart = findViewById(R.id.LetsStart);
+
+        LetsStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this , RegisterationActivity.class));
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

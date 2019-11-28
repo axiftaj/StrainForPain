@@ -16,7 +16,6 @@
         android:layout_height="wrap_content"/>
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/logoid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -131,25 +130,26 @@
 
 
     <TextView
-        android:gravity="center"
+        android:fontFamily="@font/poppins_regular"
         android:layout_centerHorizontal="true"
-        android:id="@+id/no_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
+        android:paddingRight="50dp"
         android:layout_marginBottom="20dp"
         android:text="Already Have An Account ?" />
 
     <TextView
+        android:id="@+id/login"
+        android:paddingLeft="182dp"
         android:textColor="#44A044"
+        android:clickable="true"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:layout_toRightOf="@+id/no_account"
+        android:fontFamily="@font/poppins_regular"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:text="Let's Start"
-        android:layout_marginLeft="3dp"
+        android:text="Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

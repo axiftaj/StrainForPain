@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.strainforpain.Network.ApiClientPrivate;
@@ -26,6 +27,7 @@ public class RegisterationActivity extends AppCompatActivity {
     private ImageView reg_back_btn;
     private Button next_btn;
     private boolean check = false;
+    private TextView login ;
 
     private String email, password, confirmPassword, fullname;
 
@@ -44,6 +46,15 @@ public class RegisterationActivity extends AppCompatActivity {
         et_email = findViewById(R.id.email_reg_btn);
         et_password = findViewById(R.id.password_reg_btn);
         et_retypePassord = findViewById(R.id.confrimr_password_reg_btn);
+        login = findViewById(R.id.login);
+
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterationActivity.this , LoginActivity.class));
+            }
+        });
 
 
         next_btn.setOnClickListener(new View.OnClickListener() {

@@ -16,7 +16,6 @@
         android:layout_height="wrap_content"/>
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/logoid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -31,11 +30,11 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginBottom="5dp"
        android:layout_above="@+id/nulltext"
         android:layout_centerHorizontal="true"
         android:text="Login"
-        android:textStyle="bold"
         android:textSize="15sp"
         android:textColor="#ffffff"
         android:layout_width="wrap_content"
@@ -81,7 +80,6 @@
         />
 
     <TextView
-        android:id="@+id/forgotpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
@@ -103,7 +101,7 @@
         android:layout_centerHorizontal="true"
         android:background="@mipmap/btn_dark_bg"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_height="wrap_content"/>
 
     <View
@@ -116,18 +114,19 @@
 
 
     <TextView
-        android:gravity="center"
-        android:id="@+id/no_account"
+        android:paddingRight="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="95dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:text="No Account Yet ?" />
 
     <TextView
+        android:paddingLeft="135dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/LetsStart"
         android:textColor="#44A044"
-        android:layout_toRightOf="@+id/no_account"
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"

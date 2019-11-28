@@ -103,7 +103,6 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/et_relative_layout"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/relative_layout"

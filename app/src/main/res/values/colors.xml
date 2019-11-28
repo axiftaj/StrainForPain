@@ -4,13 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="switchTrack">#ffd600</color>
-    <color name="switchTrackDisable">#90caf9</color>
-    <color name="switchTrackActive">#1565c0</color>
-    <color name="switchTrackNormal">#90caf9</color>
-    <color name="switchThumbBgActive">#1b5e20</color>
-    <color name="switchThumbActive">#ad1457</color>
-    <color name="switchThumbkNormal">#64b5f6</color>
     <color name="gray">#F3F3F3</color>
 
 
