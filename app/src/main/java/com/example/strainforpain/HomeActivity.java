@@ -55,25 +55,24 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-        Bundle bundle = getIntent().getExtras();
-
-        if (bundle!=null) {
-            String name = bundle.getString("name");
-            diseaseName.setText(name);
-
-        }
-       // Log.d("diseaseName" , name);
-        //Toast.makeText(this, "id : "+ id, Toast.LENGTH_SHORT).show();
-
 
         homeAdapter = new HomeAdapter(homeModelsList, this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(homeAdapter);
 
-                SharedPreferences sp=getSharedPreferences("Login", Context.MODE_PRIVATE);
+    Log.d("test id" , GeneralUtills.getSharedPreferences(HomeActivity.this).getString("id" , ""));
+        Bundle bundle = getIntent().getExtras();
 
-                ApicCall(GeneralUtills.getSharedPreferences(HomeActivity.this).getString("id" , ""));
+        if (bundle!=null) {
+            String name = bundle.getString("name");
+          //  String id = bundle.getString("id");
+
+            }
+
+        ApicCall(GeneralUtills.getSharedPreferences(HomeActivity.this ).getString("id" , ""));
+
+        diseaseName.setText(GeneralUtills.getSharedPreferences(HomeActivity.this ).getString("name" , ""));
 
     }
 

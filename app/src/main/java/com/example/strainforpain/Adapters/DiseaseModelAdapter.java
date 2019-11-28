@@ -70,6 +70,8 @@ public class DiseaseModelAdapter extends RecyclerView.Adapter<DiseaseModelAdapte
 
             Datum datum = diseaseModels.get(getAdapterPosition());
             GeneralUtills.putStringValueInEditor(context , "id" , String.valueOf(datum.getId()));
+            GeneralUtills.putStringValueInEditor(context , "name" , String.valueOf(datum.getDiseaseName()));
+
 
             Intent intent = new Intent(context , HomeActivity.class);
 

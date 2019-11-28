@@ -98,15 +98,26 @@ public class LoginActivity extends AppCompatActivity {
 
                             String message = jsonObject.getString("msg");
                             if(message.contains("Successfull")) {
-                                startActivity(new Intent(LoginActivity.this , HomeActivity.class));
+
+
+                                Intent intent = new Intent(LoginActivity.this , HomeActivity.class);
+//                                Bundle bundle = new Bundle();
+//                                bundle.putString("id" ,  jsonObject.getString("disease_id"));
+//                                intent.putExtras(bundle);
+
+                                GeneralUtills.putStringValueInEditor(LoginActivity.this , "id" , jsonObject.getString("disease_id"));
+
+                                Toast.makeText(LoginActivity.this, "disease_id" +jsonObject.getString("disease_id") , Toast.LENGTH_SHORT).show();
+
                                 Toast.makeText(LoginActivity.this, "login", Toast.LENGTH_SHORT).show();
                                 progressDialog.dismiss();
+
+                                GeneralUtills.putBooleanValueInEditor(LoginActivity.this , "isLogin" , true);
+
+                                startActivity(intent);
+
                                 finishAffinity();
 
-                                id =  jsonObject.getString("id");
-
-                                GeneralUtills.putStringValueInEditor(LoginActivity.this , "id" , id );
-                                GeneralUtills.putBooleanValueInEditor(LoginActivity.this , "isLogin" , true);
 
 
                             }else {

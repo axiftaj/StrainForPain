@@ -94,6 +94,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             context.startActivity(intent);
 
 
+
+
         }
     }
 }
