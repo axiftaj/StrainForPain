@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".PasswordResetActivity"></activity>
+        <activity android:name=".VerficationActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".DetailActivity" />
         <activity android:name=".DiseaseActivity" />
         <activity android:name=".SignUpThreeActivity" />
         <activity android:name=".SignUpTwoActivity" />
@@ -29,8 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

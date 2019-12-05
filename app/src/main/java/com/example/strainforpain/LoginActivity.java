@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView back ;
     private Button login ;
     private EditText email_id_option , password ;
-    private TextView LetsStart ;
+    private TextView LetsStart , forgotPassword ;
     String id ;
 
     private static final String PREFER_NAME = null;
@@ -52,6 +52,14 @@ public class LoginActivity extends AppCompatActivity {
         email_id_option = findViewById(R.id.email_id_option);
         password = findViewById(R.id.password);
         LetsStart = findViewById(R.id.LetsStart);
+        forgotPassword = findViewById(R.id.forgotPassword);
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this , ForgotPasswordActivity.class));
+            }
+        });
 
         LetsStart.setOnClickListener(new View.OnClickListener() {
             @Override
