@@ -35,6 +35,7 @@
         android:layout_centerHorizontal="true"
         android:text="Start"
         android:textStyle="bold"
+        android:fontFamily="@font/poppins_semi_bold"
         android:textSize="15sp"
         android:textColor="#ffffff"
         android:layout_width="wrap_content"

@@ -2,120 +2,143 @@
 package com.example.strainforpain.models.DetailsModel;
 
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
 public class Datum2 {
 
-    @SerializedName("CBD")
-    private String mCBD;
-    @SerializedName("CBG")
-    private String mCBG;
-    @SerializedName("CBN")
-    private String mCBN;
-    @SerializedName("Description")
-    private String mDescription;
-    @SerializedName("image")
-    private String mImage;
-    @SerializedName("Origins")
-    private String mOrigins;
-    @SerializedName("Potency")
-    private String mPotency;
-    @SerializedName("THC")
-    private String mTHC;
-    @SerializedName("THCV")
-    private String mTHCV;
     @SerializedName("title")
-    private String mTitle;
+    @Expose
+    private String title;
+    @SerializedName("image")
+    @Expose
+    private String image;
+    @SerializedName("THC")
+    @Expose
+    private String tHC;
+    @SerializedName("CBD")
+    @Expose
+    private String cBD;
+    @SerializedName("CBN")
+    @Expose
+    private String cBN;
+    @SerializedName("THCV")
+    @Expose
+    private String tHCV;
+    @SerializedName("CBG")
+    @Expose
+    private String cBG;
     @SerializedName("Type")
-    private String mType;
-
-    public String getCBD() {
-        return mCBD;
-    }
-
-    public void setCBD(String cBD) {
-        mCBD = cBD;
-    }
-
-    public String getCBG() {
-        return mCBG;
-    }
-
-    public void setCBG(String cBG) {
-        mCBG = cBG;
-    }
-
-    public String getCBN() {
-        return mCBN;
-    }
-
-    public void setCBN(String cBN) {
-        mCBN = cBN;
-    }
-
-    public String getDescription() {
-        return mDescription;
-    }
-
-    public void setDescription(String description) {
-        mDescription = description;
-    }
-
-    public String getImage() {
-        return mImage;
-    }
-
-    public void setImage(String image) {
-        mImage = image;
-    }
-
-    public String getOrigins() {
-        return mOrigins;
-    }
-
-    public void setOrigins(String origins) {
-        mOrigins = origins;
-    }
-
-    public String getPotency() {
-        return mPotency;
-    }
-
-    public void setPotency(String potency) {
-        mPotency = potency;
-    }
-
-    public String getTHC() {
-        return mTHC;
-    }
-
-    public void setTHC(String tHC) {
-        mTHC = tHC;
-    }
-
-    public String getTHCV() {
-        return mTHCV;
-    }
-
-    public void setTHCV(String tHCV) {
-        mTHCV = tHCV;
-    }
+    @Expose
+    private String type;
+    @SerializedName("Origins")
+    @Expose
+    private String origins;
+    @SerializedName("Potency")
+    @Expose
+    private String potency;
+    @SerializedName("Description")
+    @Expose
+    private String description;
+    @SerializedName("Url")
+    @Expose
+    private String url;
 
     public String getTitle() {
-        return mTitle;
+        return title;
     }
 
     public void setTitle(String title) {
-        mTitle = title;
+        this.title = title;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getTHC() {
+        return tHC;
+    }
+
+    public void setTHC(String tHC) {
+        this.tHC = tHC;
+    }
+
+    public String getCBD() {
+        return cBD;
+    }
+
+    public void setCBD(String cBD) {
+        this.cBD = cBD;
+    }
+
+    public String getCBN() {
+        return cBN;
+    }
+
+    public void setCBN(String cBN) {
+        this.cBN = cBN;
+    }
+
+    public String getTHCV() {
+        return tHCV;
+    }
+
+    public void setTHCV(String tHCV) {
+        this.tHCV = tHCV;
+    }
+
+    public String getCBG() {
+        return cBG;
+    }
+
+    public void setCBG(String cBG) {
+        this.cBG = cBG;
     }
 
     public String getType() {
-        return mType;
+        return type;
     }
 
     public void setType(String type) {
-        mType = type;
+        this.type = type;
+    }
+
+    public String getOrigins() {
+        return origins;
+    }
+
+    public void setOrigins(String origins) {
+        this.origins = origins;
+    }
+
+    public String getPotency() {
+        return potency;
+    }
+
+    public void setPotency(String potency) {
+        this.potency = potency;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
 }

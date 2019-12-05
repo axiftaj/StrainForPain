@@ -35,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private TextView diseaseName;
     private Button drop_down_btn ;
+    private TextView logpout ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         diseaseName = findViewById(R.id.diseaseName);
         recyclerView = findViewById(R.id.recyclerView);
         drop_down_btn = findViewById(R.id.drop_down_btn);
+        logpout = findViewById(R.id.Logout);
 
 
 
@@ -54,6 +56,15 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
+        logpout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GeneralUtills.putBooleanValueInEditor(HomeActivity.this , "isLogin" , false);
+                startActivity(new Intent(HomeActivity.this, OptionsActivity.class));
+                finish();
+
+            }
+        });
 
 
         homeAdapter = new HomeAdapter(homeModelsList, this);
@@ -61,7 +72,6 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(homeAdapter);
 
-    Log.d("test id" , GeneralUtills.getSharedPreferences(HomeActivity.this).getString("id" , ""));
         Bundle bundle = getIntent().getExtras();
 
         if (bundle!=null) {
@@ -109,7 +119,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
         finishAffinity();
     }
 }

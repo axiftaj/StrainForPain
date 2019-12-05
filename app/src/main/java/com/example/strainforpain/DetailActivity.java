@@ -3,9 +3,11 @@ package com.example.strainforpain;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +30,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView titleName ;
     private List<Datum2> datum2Lis = new ArrayList<>();
     private ImageView imageView ;
+    private Button url ;
 
     public TextView title , gradient1 , gradient2 , gradient3 , gradient4 , gradient5 , prtency , description , origin , type ;
     @Override
@@ -46,6 +49,7 @@ public class DetailActivity extends AppCompatActivity {
         gradient4 = findViewById(R.id.THCV);
         gradient5 = findViewById(R.id.CBC);
         imageView = findViewById(R.id.image);
+        url = findViewById(R.id.URL);
 
         prtency = findViewById(R.id.et_prtency);
         origin = findViewById(R.id.et_origin);
@@ -101,6 +105,7 @@ public class DetailActivity extends AppCompatActivity {
                     String str_origin = String.valueOf(response.body().getData().get(0).getOrigins());
                     String str_Potency = String.valueOf(response.body().getData().get(0).getPotency());
                     String str_description = String.valueOf(response.body().getData().get(0).getDescription());
+                    final String str_link = String.valueOf(response.body().getData().get(0).getUrl());
 
 
 
@@ -114,7 +119,16 @@ public class DetailActivity extends AppCompatActivity {
                     type.setText(str_Type);
                     origin.setText(str_origin);
                     prtency.setText(str_Potency);
-                      description.setText(str_description);
+                    description.setText(str_description);
+                    url.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            Intent i = new Intent(Intent.ACTION_VIEW);
+                            i.setData(Uri.parse(str_link));
+                            startActivity(i);
+                        }
+                    });
 
 
 

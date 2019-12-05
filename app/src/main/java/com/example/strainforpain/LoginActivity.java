@@ -40,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
     private TextView LetsStart ;
     String id ;
 
-
     private static final String PREFER_NAME = null;
 
     @Override
@@ -106,10 +105,9 @@ public class LoginActivity extends AppCompatActivity {
 //                                intent.putExtras(bundle);
 
                                 GeneralUtills.putStringValueInEditor(LoginActivity.this , "id" , jsonObject.getString("disease_id"));
+                                GeneralUtills.putStringValueInEditor(LoginActivity.this , "name" , jsonObject.getString("disease_name"));
 
-                                Toast.makeText(LoginActivity.this, "disease_id" +jsonObject.getString("disease_id") , Toast.LENGTH_SHORT).show();
 
-                                Toast.makeText(LoginActivity.this, "login", Toast.LENGTH_SHORT).show();
                                 progressDialog.dismiss();
 
                                 GeneralUtills.putBooleanValueInEditor(LoginActivity.this , "isLogin" , true);
@@ -122,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             }else {
                                 progressDialog.dismiss();
-                                Toast.makeText(LoginActivity.this, "Incorrect", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Your Email or Password is incorrect", Toast.LENGTH_SHORT).show();
                             }
 
                         } catch (JSONException e) {

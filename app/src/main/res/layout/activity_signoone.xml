@@ -61,7 +61,6 @@
             android:textSize="18sp"
             android:textColor="#263238"
            android:layout_alignParentRight="true"
-              android:hint="2019"
                 android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -79,7 +78,7 @@
             app:isb_thumb_color="#FBE551"
             app:isb_thumb_size="20dp"
             app:isb_show_indicator="rounded_rectangle"
-            app:isb_indicator_color="#BC6C3A"
+            app:isb_indicator_color="#FBE551"
             app:isb_indicator_text_color="#EFEFEF"
             app:isb_indicator_text_size="18sp"
             app:isb_track_background_color="#EFEFEF"
@@ -223,7 +222,7 @@
             app:isb_thumb_color="#44C5EA"
             app:isb_thumb_size="20dp"
             app:isb_show_indicator="rounded_rectangle"
-            app:isb_indicator_color="#BC6C3A"
+            app:isb_indicator_color="#44C5EA"
             app:isb_indicator_text_color="#EFEFEF"
             app:isb_indicator_text_size="18sp"
             app:isb_track_background_color="#EFEFEF"
@@ -246,7 +245,6 @@
         android:layout_below="@+id/heigh_realtivelayout"/>
 
     <LinearLayout
-
         android:id="@+id/female"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -256,10 +254,10 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             android:id="@+id/women"
             android:src="@mipmap/woman"
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -279,7 +277,7 @@
         <ImageView
             android:background="#eee"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             android:id="@+id/boy"
             android:src="@mipmap/boy"
             android:layout_width="wrap_content"

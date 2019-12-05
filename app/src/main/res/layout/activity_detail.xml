@@ -334,6 +334,7 @@
         android:fontFamily="@font/poppins_regular"/>
 
     <Button
+        android:id="@+id/URL"
         android:layout_marginTop="10dp"
         android:layout_alignParentRight="true"
         android:layout_width="150dp"
