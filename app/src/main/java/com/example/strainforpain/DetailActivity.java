@@ -120,15 +120,30 @@ public class DetailActivity extends AppCompatActivity {
                     origin.setText(str_origin);
                     prtency.setText(str_Potency);
                     description.setText(str_description);
-                    url.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
 
-                            Intent i = new Intent(Intent.ACTION_VIEW);
-                            i.setData(Uri.parse(str_link));
-                            startActivity(i);
-                        }
-                    });
+                    if(str_link.contains("null")){
+
+
+                        url.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                Toast.makeText(DetailActivity.this, "URL Empty", Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+
+                    }else {
+                        url.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                Intent i = new Intent(Intent.ACTION_VIEW);
+                                i.setData(Uri.parse(str_link));
+                                startActivity(i);
+                            }
+                        });
+                    }
 
 
 

@@ -3,6 +3,9 @@ package com.example.strainforpain.Network;
 import com.example.strainforpain.Adapters.Model.DiseaseHomeResponse.DiseaseHomeResponse;
 import com.example.strainforpain.Adapters.Model.diseaseModels.DiseaseResponse;
 import com.example.strainforpain.models.DetailsModel.DetailResponseModel;
+import com.example.strainforpain.models.ForgotPassword.ForgotResponse;
+import com.example.strainforpain.models.ForgotPassword.PasswordReset;
+import com.example.strainforpain.models.ForgotPassword.VerificationCodeResponse;
 import com.example.strainforpain.models.signupModels.ResponseDataStep2;
 import com.example.strainforpain.models.signupModels.ResponseDataStep3;
 import com.example.strainforpain.models.signupModels.SignUpResponse;
@@ -37,6 +40,20 @@ public interface ApiInterface {
                                               @Field("description") String description,
                                               @Field("location") String location);
 
+    @FormUrlEncoded
+    @POST("reset-password")
+    Call<ForgotResponse> forgotPassword(@Field("email") String email);
+
+    @FormUrlEncoded
+    @POST("verify-code")
+    Call<VerificationCodeResponse> verficationCode(@Field("code") String code,
+                                                  @Field("email") String email);
+    @FormUrlEncoded
+    @POST("change-password")
+    Call<PasswordReset> passwordReset(@Field("newPassword") String password);
+
+
+
     @GET("diseases")
     Call<DiseaseResponse> getDiseases();
 
@@ -46,6 +63,7 @@ public interface ApiInterface {
 
     @GET("diseasedetails?")
     Call<DetailResponseModel> getHomeDiseasesDetails(@Query("id") String title);
+
 
 
 }
