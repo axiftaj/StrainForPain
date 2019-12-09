@@ -71,7 +71,7 @@ public class PasswordResetActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
 
                     Intent intent = new Intent(PasswordResetActivity.this, LoginActivity.class);
-
+//ok
                     Bundle bundle = new Bundle();
                     startActivity(new Intent(PasswordResetActivity.this, LoginActivity.class).putExtras(bundle));
                     progressDialog.dismiss();
