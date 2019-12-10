@@ -50,7 +50,8 @@ public interface ApiInterface {
                                                   @Field("email") String email);
     @FormUrlEncoded
     @POST("change-password")
-    Call<PasswordReset> passwordReset(@Field("newPassword") String password);
+    Call<PasswordReset> passwordReset(@Field("email") String email,
+                                      @Field("password") String password);
 
 
 

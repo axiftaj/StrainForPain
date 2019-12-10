@@ -14,9 +14,8 @@ import android.widget.Toast;
 
 import com.example.strainforpain.Network.ApiClientPrivate;
 import com.example.strainforpain.Network.ApiInterface;
-import com.example.strainforpain.models.ForgotPassword.ForgotResponse;
+import com.example.strainforpain.Utills.GeneralUtills;
 import com.example.strainforpain.models.ForgotPassword.PasswordReset;
-import com.example.strainforpain.models.ForgotPassword.VerificationCodeResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -64,17 +63,17 @@ public class PasswordResetActivity extends AppCompatActivity {
         progressDialog.show();
 
         ApiInterface apiInterface = ApiClientPrivate.getApiClient().create(ApiInterface.class);
-        Call<PasswordReset> call = apiInterface.passwordReset(password);
+        Call<PasswordReset> call = apiInterface.passwordReset( GeneralUtills.getSharedPreferences(PasswordResetActivity.this ).getString("veremail" , ""),password);
         call.enqueue(new Callback<PasswordReset>() {
             @Override
             public void onResponse(Call<PasswordReset> call, retrofit2.Response<PasswordReset> response) {
                 if (response.isSuccessful()){
 
                     Intent intent = new Intent(PasswordResetActivity.this, LoginActivity.class);
-//ok
                     Bundle bundle = new Bundle();
                     startActivity(new Intent(PasswordResetActivity.this, LoginActivity.class).putExtras(bundle));
                     progressDialog.dismiss();
+                    Toast.makeText(PasswordResetActivity.this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
 
                 }else{
                     Toast.makeText(PasswordResetActivity.this, response.message(), Toast.LENGTH_SHORT).show();
