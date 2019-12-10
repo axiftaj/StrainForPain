@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.strainforpain.Network.ApiClientPrivate;
@@ -26,6 +27,7 @@ public class VerficationActivity extends AppCompatActivity {
 
     Button verify_next ;
     EditText nub1 , nub2 , nub3 , nub4 ;
+    private ImageView back_btn ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,8 @@ public class VerficationActivity extends AppCompatActivity {
         nub2 = findViewById(R.id.num2);
         nub3 = findViewById(R.id.num3);
         nub4 = findViewById(R.id.num4);
+
+
 
         final String email = GeneralUtills.getSharedPreferences(VerficationActivity.this ).getString("veremail" , "");
 

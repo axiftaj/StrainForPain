@@ -89,20 +89,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="CDB"
-                    android:fontFamily="@font/poppins_regular"
-                    android:gravity="center_horizontal"
-                    android:textColor="#000"
-                    android:textSize="15sp"
-                    />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:fontFamily="@font/poppins_regular"
                     android:text="THC"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal"
                     android:textColor="#000"
                     android:textSize="15sp"
                     />
@@ -113,15 +102,24 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:fontFamily="@font/poppins_regular"
+                    android:text="CBD"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    />
 
-                    android:text="THC"
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="CBN"
                     android:textColor="#000"
                     android:textSize="15sp"
                     />
 
                 <TextView
                     android:fontFamily="@font/poppins_regular"
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -133,23 +131,21 @@
 
                 <TextView
                     android:fontFamily="@font/poppins_regular"
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
-                    android:text="CBC"
+                    android:text="THCV"
                     android:textColor="#000"
                     android:textSize="15sp"
                     />
 
                 <TextView
                     android:fontFamily="@font/poppins_regular"
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="CBC"
+                    android:layout_weight="0.9"
+                    android:text="CBG"
                     android:textColor="#000"
                     android:gravity="center_horizontal"
                     android:textSize="15sp"
@@ -165,7 +161,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/CDB"
+                    android:id="@+id/THC"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -175,7 +171,7 @@
                     android:textAlignment="center" />
 
                 <TextView
-                    android:id="@+id/THC"
+                    android:id="@+id/CBD"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -195,16 +191,6 @@
                     android:text="0.876" />
 
                 <TextView
-                    android:id="@+id/THCV"
-
-                    android:fontFamily="@font/poppins_light"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="0.876" />
-
-                <TextView
                     android:id="@+id/CBC"
 
                     android:fontFamily="@font/poppins_light"
@@ -215,6 +201,17 @@
                     android:text="0.876" />
 
                 <TextView
+                    android:id="@+id/THCV"
+
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="0.876" />
+
+                <TextView
+                    android:id="@+id/CBG"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_light"

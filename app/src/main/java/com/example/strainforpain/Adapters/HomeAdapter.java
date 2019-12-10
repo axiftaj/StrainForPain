@@ -15,9 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.strainforpain.Adapters.Model.DiseaseHomeResponse.Datum1;
-import com.example.strainforpain.Adapters.Model.diseaseModels.Datum;
 import com.example.strainforpain.DetailActivity;
-import com.example.strainforpain.HomeActivity;
 import com.example.strainforpain.R;
 
 
@@ -66,16 +64,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView title , name1 , name2 , name3 , name4;
+        TextView title , name1 , name2 , name3 , name4 , name5 , name6;
         ImageView imageView ;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.title);
-            name1 = itemView.findViewById(R.id.CDB);
-            name2 = itemView.findViewById(R.id.CBN);
-            name3 = itemView.findViewById(R.id.THCV);
-            name4 = itemView.findViewById(R.id.THC);
+            name1 = itemView.findViewById(R.id.THC);
+            name2 = itemView.findViewById(R.id.CBD);
+            name3 = itemView.findViewById(R.id.CBN);
+            name4 = itemView.findViewById(R.id.CBC);
+            name6 = itemView.findViewById(R.id.THCV);
+            name6 = itemView.findViewById(R.id.CBG);
+
             imageView = itemView.findViewById(R.id.image);
 
             itemView.setOnClickListener(this);

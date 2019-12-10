@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -32,7 +31,7 @@ public class DetailActivity extends AppCompatActivity {
     private ImageView imageView ;
     private Button url ;
 
-    public TextView title , gradient1 , gradient2 , gradient3 , gradient4 , gradient5 , prtency , description , origin , type ;
+    public TextView title , gradient1 , gradient2 , gradient3 , gradient4 , gradient5 , gradient6, prtency , description , origin , type ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +42,12 @@ public class DetailActivity extends AppCompatActivity {
         titleName = findViewById(R.id.name);
 
         title = findViewById(R.id.title);
-        gradient1 = findViewById(R.id.CDB);
-        gradient2 = findViewById(R.id.THC);
+        gradient1 = findViewById(R.id.THC);
+        gradient2 = findViewById(R.id.CBD);
         gradient3 = findViewById(R.id.CBN);
-        gradient4 = findViewById(R.id.THCV);
-        gradient5 = findViewById(R.id.CBC);
+        gradient4 = findViewById(R.id.CBC);
+        gradient5 = findViewById(R.id.THCV);
+        gradient6  = findViewById(R.id.CBG);
         imageView = findViewById(R.id.image);
         url = findViewById(R.id.URL);
 
@@ -99,8 +99,13 @@ public class DetailActivity extends AppCompatActivity {
                     String str_gradient1 = String.valueOf(response.body().getData().get(0).getTHC());
                     String str_gradient2 = String.valueOf(response.body().getData().get(0).getCBD());
                     String str_gradient3 = String.valueOf(response.body().getData().get(0).getCBN());
-                    String str_gradient4 = String.valueOf(response.body().getData().get(0).getTHCV());
-                    String str_gradient5 = String.valueOf(response.body().getData().get(0).getCBG());
+
+                    String str_gradient4 = String.valueOf(response.body().getData().get(0).getCBC());
+
+                    String str_gradient5 = String.valueOf(response.body().getData().get(0).getTHCV());
+
+                    String str_gradient6 = String.valueOf(response.body().getData().get(0).getCBG());
+
                     String str_Type = String.valueOf(response.body().getData().get(0).getType());
                     String str_origin = String.valueOf(response.body().getData().get(0).getOrigins());
                     String str_Potency = String.valueOf(response.body().getData().get(0).getPotency());
@@ -116,6 +121,7 @@ public class DetailActivity extends AppCompatActivity {
                     gradient3.setText(str_gradient3);
                     gradient4.setText(str_gradient4);
                     gradient5.setText(str_gradient5);
+                    gradient6.setText(str_gradient6);
                     type.setText(str_Type);
                     origin.setText(str_origin);
                     prtency.setText(str_Potency);
