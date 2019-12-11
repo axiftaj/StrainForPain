@@ -47,10 +47,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         Datum1 datum1 = homeModelList.get(position);
 
         holder.title.setText(datum1.getTitle());
-        holder.name1.setText(datum1.getCBD());
-        holder.name2.setText(datum1.getCBN());
-        holder.name3.setText(datum1.getTHCV());
-        holder.name4.setText(datum1.getTHC());
+        holder.name1.setText(datum1.getTHC());
+        holder.name2.setText(datum1.getCBD());
+        holder.name3.setText(datum1.getCBN());
+        holder.name4.setText(datum1.getCBC());
+        holder.name5.setText(datum1.getTHCV());
+        holder.name6.setText(datum1.getCBG());
 
         Glide.with(context).load(datum1.getImage()).placeholder(R.drawable.ic_launcher_background).into(holder.imageView);
 
@@ -74,7 +76,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             name2 = itemView.findViewById(R.id.CBD);
             name3 = itemView.findViewById(R.id.CBN);
             name4 = itemView.findViewById(R.id.CBC);
-            name6 = itemView.findViewById(R.id.THCV);
+            name5 = itemView.findViewById(R.id.THCV);
             name6 = itemView.findViewById(R.id.CBG);
 
             imageView = itemView.findViewById(R.id.image);
